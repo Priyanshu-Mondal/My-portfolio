@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark" data-accent="cyan">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Priyanshu Mondal | Aspiring Software Developer</title>
+<meta name="description" content="Portfolio of Priyanshu Mondal, a Diploma in Computer Science & Technology student and aspiring software developer interested in web development, Python, AI and Machine Learning.">
+<meta name="author" content="Priyanshu Mondal">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://priyanshu-mondal.vercel.app/">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Priyanshu Mondal | Aspiring Software Developer">
+<meta property="og:description" content="Diploma CST student building futuristic web experiences with Python & JavaScript.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="assets/profile.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
+<!-- Favicon -->
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='%2300e5ff'/><stop offset='1' stop-color='%23a855f7'/></linearGradient></defs><rect width='100' height='100' rx='22' fill='%2305050a'/><text x='50' y='68' font-family='Inter,sans-serif' font-size='52' font-weight='800' fill='url(%23g)' text-anchor='middle'>PM</text></svg>">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- External CSS -->
+<link rel="stylesheet" href="p.css">
+</head>
+<body>
+
+<!-- ═══ SCROLL PROGRESS ═══ -->
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<!-- ═══ CURSOR ═══ -->
+<div class="cursor-dot" id="cursorDot"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- ═══ LOADER ═══ -->
+<div class="loader" id="loader">
+  <div class="loader-inner">
+    <div class="loader-logo">PM.</div>
+    <div class="loader-bar"><div class="loader-bar-fill"></div></div>
+    <div class="loader-text">Initializing portfolio...</div>
+  </div>
+</div>
+
+<!-- ═══ ANIMATED BACKGROUND ═══ -->
+<div class="bg-layer" aria-hidden="true">
+  <div class="bg-grid"></div>
+  <div class="bg-mesh"></div>
+  <div class="bg-blob blob-1"></div>
+  <div class="bg-blob blob-2"></div>
+  <div class="bg-blob blob-3"></div>
+  <div class="bg-particles" id="particles"></div>
+  <div class="bg-glow" id="bgGlow"></div>
+</div>
+
+<a href="#hero" class="skip-link">Skip to content</a>
+
+<!-- ═══ NAVIGATION ═══ -->
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="#hero" class="nav-logo" aria-label="Home">
+      <span class="logo-mark">PM</span><span class="logo-dot">.</span>
+    </a>
+
+    <nav class="nav-menu" id="navMenu" aria-label="Main navigation">
+      <a href="#hero" class="nav-link active">Home</a>
+      <a href="#about" class="nav-link">About</a>
+      <a href="#skills" class="nav-link">Skills</a>
+      <a href="#projects" class="nav-link">Projects</a>
+      <a href="#education" class="nav-link">Education</a>
+      <a href="#learning" class="nav-link">Learning</a>
+      <a href="#certificates" class="nav-link">Certificates</a>
+      <a href="#resume" class="nav-link">Resume</a>
+      <a href="#contact" class="nav-link">Contact</a>
+    </nav>
+
+    <div class="nav-actions">
+      <button class="icon-btn" id="cmdBtn" aria-label="Open command palette" data-tooltip="Ctrl + K">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.35-4.35"/></svg>
+      </button>
+      <button class="icon-btn" id="accentBtn" aria-label="Change accent color">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><circle cx="13.5" cy="6.5" r=".5"/><circle cx="17.5" cy="10.5" r=".5"/><circle cx="8.5" cy="7.5" r=".5"/><circle cx="6.5" cy="12.5" r=".5"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/></svg>
+      </button>
+      <button class="icon-btn" id="themeBtn" aria-label="Toggle theme">
+        <svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+      </button>
+      <a href="#contact" class="btn-nav magnetic">Let's Connect</a>
+      <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ═══ MOBILE MENU OVERLAY ═══ -->
+<div class="mobile-menu" id="mobileMenu">
+  <nav>
+    <a href="#hero">Home</a>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#education">Education</a>
+    <a href="#learning">Learning</a>
+    <a href="#certificates">Certificates</a>
+    <a href="#resume">Resume</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</div>
+
+<main>
+
+<!-- ═══════════ HERO ═══════════ -->
+<section class="hero" id="hero">
+  <div class="container hero-grid">
+
+    <!-- LEFT: Text -->
+    <div class="hero-left">
+      <div class="badge reveal">
+        <span class="pulse"></span>
+        AVAILABLE FOR ENTRY-LEVEL OPPORTUNITIES
+      </div>
+
+      <h1 class="hero-title">
+        <span class="line reveal-line">Hi, I'm <span class="text-grad">Priyanshu Mondal</span></span>
+        <span class="line hero-role reveal-line">Aspiring Software Developer</span>
+      </h1>
+
+      <p class="hero-desc reveal">
+        Diploma in Computer Science &amp; Technology student from West Bengal, passionate
+        about programming, web development, Python and emerging AI technologies.
+      </p>
+
+      <div class="hero-cta reveal">
+        <a href="#projects" class="btn btn-primary magnetic">
+          Explore My Work
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </a>
+        <a href="assets/resume.pdf" download class="btn btn-ghost magnetic">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+          Download Resume
+        </a>
+      </div>
+
+      <div class="hero-social reveal">
+        <a href="https://github.com/Priyanshu-Mondal" target="_blank" rel="noopener" aria-label="GitHub" class="social-pill">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.302 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.09-.745.082-.73.082-.73 1.205.084 1.84 1.236 1.84 1.236 1.07 1.834 2.807 1.304 3.492.997.108-.775.418-1.305.762-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.468-2.38 1.235-3.22-.124-.3-.535-1.523.117-3.176 0 0 1.008-.322 3.3 1.23.96-.267 1.98-.4 3-.405 1.02.005 2.04.138 3 .405 2.29-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.876.118 3.176.77.84 1.235 1.91 1.235 3.22 0 4.61-2.805 5.625-5.475 5.92.43.37.81 1.102.81 2.222 0 1.606-.015 2.902-.015 3.296 0 .32.216.694.825.576C20.565 21.795 24 17.298 24 12c0-6.63-5.37-12-12-12z"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/in/priyanshu-mondal-51316b441" target="_blank" rel="noopener" aria-label="LinkedIn" class="social-pill">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </a>
+        <a href="mailto:parimalmondal74309@gmail.com" aria-label="Email" class="social-pill">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+        </a>
+        <a href="https://wa.me/919339191212" target="_blank" rel="noopener" aria-label="WhatsApp" class="social-pill">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- RIGHT: Profile Photo + Code Card (stacked with 35px gap, no absolute positioning) -->
+    <div class="hero-right">
+      <div class="hero-visual-stack">
+
+        <!-- Profile Photo -->
+        <div class="profile-wrapper reveal">
+          <div class="profile-ring-outer">
+            <div class="profile-ring-inner">
+              <img src="/profile my picture.jpeg" alt="Priyanshu Mondal — Aspiring Software Developer" class="profile-photo" onerror="this.style.display='none';this.parentElement.classList.add('no-img')">
+              <span class="profile-fallback">PM</span>
+            </div>
+            <span class="profile-particle p-1"></span>
+            <span class="profile-particle p-2"></span>
+            <span class="profile-particle p-3"></span>
+            <span class="profile-particle p-4"></span>
+          </div>
+        </div>
+
+        <!-- Developer Code Card -->
+        <div class="dev-card reveal" id="devCard">
+          <div class="dev-card-glow"></div>
+          <div class="dev-window">
+            <div class="dev-window-bar">
+              <span class="win-dot red"></span>
+              <span class="win-dot yellow"></span>
+              <span class="win-dot green"></span>
+              <span class="win-title">developer.py</span>
+            </div>
+            <pre class="dev-code"><code><span class="k">class</span> <span class="c">Developer</span>:
+    name     = <span class="s">"Priyanshu Mondal"</span>
+    role     = <span class="s">"Aspiring Software Developer"</span>
+    skills   = [<span class="s">"HTML"</span>, <span class="s">"CSS"</span>, <span class="s">"JavaScript"</span>, <span class="s">"Python"</span>]
+    learning = [<span class="s">"AI"</span>, <span class="s">"Machine Learning"</span>, <span class="s">"Deep Learning"</span>]
+</code></pre>
+          </div>
+
+          <div class="float-icon fi-1">🐍</div>
+          <div class="float-icon fi-2">{ }</div>
+          <div class="float-icon fi-3">&lt;/&gt;</div>
+
+          <div class="terminal-mini">
+            <span class="term-prompt">$</span>
+            <span class="term-text" id="typer"></span>
+            <span class="term-cursor">▊</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Hero Stats -->
+  <div class="container">
+    <div class="hero-stats">
+      <div class="stat-card reveal">
+        <div class="stat-val">10th</div>
+        <div class="stat-lbl">Completed 2024</div>
+      </div>
+      <div class="stat-card reveal">
+        <div class="stat-val">Diploma CST</div>
+        <div class="stat-lbl">Final Year · 5th Sem</div>
+      </div>
+      <div class="stat-card reveal">
+        <div class="stat-val">IT</div>
+        <div class="stat-lbl">Career Goal</div>
+      </div>
+      <div class="stat-card reveal">
+        <div class="stat-val">∞</div>
+        <div class="stat-lbl">Learning Mindset</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ ABOUT ═══════════ -->
+<section class="section" id="about">
+  <div class="container about-grid">
+    <div class="about-visual reveal">
+      <div class="profile-ring">
+        <div class="profile-inner"><span>PM</span></div>
+      </div>
+      <div class="profile-orbit">
+        <span>🎓</span><span>💻</span><span>🚀</span><span>🧠</span>
+      </div>
+    </div>
+
+    <div class="about-body">
+      <span class="eyebrow reveal">About Me</span>
+      <h2 class="section-title reveal">Passionate learner turning <span class="text-grad">curiosity</span> into code.</h2>
+      <p class="reveal">I'm <strong>Priyanshu Mondal</strong>, a Diploma in Computer Science &amp; Technology student from Pashpur, Jangipara, Hooghly, West Bengal — currently in my final year (5th semester) at Swami Vivekananda University.</p>
+      <p class="reveal">My journey into programming started with curiosity — and quickly grew into a genuine passion for building things with code. I work with <strong>HTML, CSS, JavaScript</strong> and <strong>Python</strong>, and I'm actively exploring <strong>AI and Machine Learning</strong> fundamentals.</p>
+      <ul class="about-list reveal">
+        <li>🎯 Seeking entry-level Software / Web / Python Developer roles</li>
+        <li>📚 Currently strengthening DSA and problem-solving skills</li>
+        <li>🌐 Languages: Bengali, Hindi, English</li>
+        <li>🏏 Hobbies: Cricket, Reading, Travelling, Learning New Tech</li>
+      </ul>
+      <a href="#contact" class="btn btn-primary magnetic reveal">More About Me
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ SKILLS ═══════════ -->
+<section class="section" id="skills">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Technical Skills</span>
+      <h2 class="section-title">My <span class="text-grad">toolkit</span> &amp; capabilities.</h2>
+      <p class="section-sub">Honest, current skill levels — everything here is actively improving.</p>
+    </div>
+
+    <div class="skills-categories">
+      <div class="skill-cat reveal">
+        <h3>Frontend</h3>
+        <div class="skill-rows">
+          <div class="skill-row"><span>HTML5</span><span class="lvl lvl-intermediate">Intermediate</span></div>
+          <div class="skill-row"><span>CSS3</span><span class="lvl lvl-intermediate">Intermediate</span></div>
+          <div class="skill-row"><span>JavaScript</span><span class="lvl lvl-basic">Basic</span></div>
+        </div>
+      </div>
+      <div class="skill-cat reveal">
+        <h3>Programming</h3>
+        <div class="skill-rows">
+          <div class="skill-row"><span>Python</span><span class="lvl lvl-basic">Basic</span></div>
+          <div class="skill-row"><span>C</span><span class="lvl lvl-familiar">Familiar</span></div>
+        </div>
+      </div>
+      <div class="skill-cat reveal">
+        <h3>Database</h3>
+        <div class="skill-rows">
+          <div class="skill-row"><span>MySQL</span><span class="lvl lvl-basic">Basic</span></div>
+        </div>
+      </div>
+      <div class="skill-cat reveal">
+        <h3>Tools</h3>
+        <div class="skill-rows">
+          <div class="skill-row"><span>VS Code</span><span class="lvl lvl-intermediate">Intermediate</span></div>
+          <div class="skill-row"><span>MS Word</span><span class="lvl lvl-familiar">Familiar</span></div>
+          <div class="skill-row"><span>MS Excel</span><span class="lvl lvl-familiar">Familiar</span></div>
+        </div>
+      </div>
+      <div class="skill-cat reveal">
+        <h3>Fundamentals</h3>
+        <div class="skill-rows">
+          <div class="skill-row"><span>Networking</span><span class="lvl lvl-basic">Basic</span></div>
+          <div class="skill-row"><span>AI Fundamentals</span><span class="lvl lvl-basic">Basic</span></div>
+          <div class="skill-row"><span>ML Fundamentals</span><span class="lvl lvl-basic">Basic</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="orbit-wrap reveal">
+      <div class="orbit" id="orbit">
+        <div class="orbit-center">PRIYANSHU</div>
+        <div class="orbit-ring ring-1">
+          <span class="node n-1">HTML</span>
+          <span class="node n-2">CSS</span>
+          <span class="node n-3">JS</span>
+        </div>
+        <div class="orbit-ring ring-2">
+          <span class="node n-4">Python</span>
+          <span class="node n-5">MySQL</span>
+          <span class="node n-6">AI</span>
+          <span class="node n-7">ML</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ PROJECTS ═══════════ -->
+<section class="section" id="projects">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Projects</span>
+      <h2 class="section-title">Things I've <span class="text-grad">built</span> while learning.</h2>
+    </div>
+
+    <div class="filter-row reveal" role="tablist">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="web">Web</button>
+      <button class="filter-btn" data-filter="python">Python</button>
+      <button class="filter-btn" data-filter="db">Database</button>
+    </div>
+
+    <div class="projects-grid" id="projectsGrid">
+
+      <article class="project-card reveal" data-cat="web" data-project="maa-tara">
+        <div class="proj-thumb thumb-web">
+          <div class="thumb-icon">🏢</div>
+          <div class="thumb-overlay"><span>View Details →</span></div>
+        </div>
+        <div class="proj-body">
+          <h3>Maa Tara Enterprises</h3>
+          <p>Responsive business website for a rice supplier with product showcase, contact section and professional branding.</p>
+          <div class="proj-tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+          <div class="proj-actions">
+            <a href="#" class="proj-btn ghost" onclick="event.stopPropagation();return false;">GitHub</a>
+            <a href="#" class="proj-btn primary" onclick="event.stopPropagation();return false;">Live Demo</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="project-card reveal" data-cat="web" data-project="personal-portfolio">
+        <div class="proj-thumb thumb-portfolio">
+          <div class="thumb-icon">&lt;/&gt;</div>
+          <div class="thumb-overlay"><span>View Details →</span></div>
+        </div>
+        <div class="proj-body">
+          <h3>My Personal Portfolio</h3>
+          <p>Responsive personal portfolio website showcasing education, skills, projects and contact information.</p>
+          <div class="proj-tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+          <div class="proj-actions">
+            <a href="#" class="proj-btn ghost" onclick="event.stopPropagation();return false;">GitHub</a>
+            <a href="#" class="proj-btn primary" onclick="event.stopPropagation();return false;">Live Demo</a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ EDUCATION ═══════════ -->
+<section class="section" id="education">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Education</span>
+      <h2 class="section-title">Academic <span class="text-grad">timeline</span>.</h2>
+    </div>
+
+    <div class="timeline">
+      <div class="timeline-line"></div>
+      <div class="timeline-item reveal">
+        <div class="timeline-node"></div>
+        <div class="timeline-card">
+          <span class="timeline-year">2024 — 2027</span>
+          <h3>Diploma in Computer Science &amp; Technology</h3>
+          <p>Swami Vivekananda University · Currently Pursuing (Final Year / 5th Semester)</p>
+        </div>
+      </div>
+      <div class="timeline-item reveal">
+        <div class="timeline-node"></div>
+        <div class="timeline-card">
+          <span class="timeline-year">2024</span>
+          <h3>Madhyamik (Secondary Education)</h3>
+          <p>Guti Uday Chand Vidya Mandir · Completed with 63%</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ LEARNING JOURNEY ═══════════ -->
+<section class="section" id="learning">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Learning Journey</span>
+      <h2 class="section-title">My <span class="text-grad">roadmap</span> so far.</h2>
+    </div>
+
+    <div class="roadmap">
+      <div class="road-step done reveal"><div class="rs-icon">📄</div><h4>HTML</h4><span class="rs-status">Practiced</span></div>
+      <div class="road-connector reveal"></div>
+      <div class="road-step done reveal"><div class="rs-icon">🎨</div><h4>CSS</h4><span class="rs-status">Practiced</span></div>
+      <div class="road-connector reveal"></div>
+      <div class="road-step active reveal"><div class="rs-icon">⚡</div><h4>JavaScript</h4><span class="rs-status">Learning</span></div>
+      <div class="road-connector reveal"></div>
+      <div class="road-step active reveal"><div class="rs-icon">🐍</div><h4>Python</h4><span class="rs-status">Learning</span></div>
+      <div class="road-connector reveal"></div>
+      <div class="road-step active reveal"><div class="rs-icon">🗄️</div><h4>MySQL</h4><span class="rs-status">Learning</span></div>
+      <div class="road-connector reveal"></div>
+      <div class="road-step upcoming reveal"><div class="rs-icon">🧠</div><h4>AI</h4><span class="rs-status">Exploring</span></div>
+      <div class="road-connector reveal"></div>
+      <div class="road-step upcoming reveal"><div class="rs-icon">🤖</div><h4>ML</h4><span class="rs-status">Exploring</span></div>
+      <div class="road-connector reveal"></div>
+      <div class="road-step upcoming reveal"><div class="rs-icon">🔬</div><h4>Deep Learning</h4><span class="rs-status">Upcoming</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ CERTIFICATES ═══════════ -->
+<section class="section" id="certificates">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Certificates</span>
+      <h2 class="section-title">Certifications &amp; <span class="text-grad">courses</span>.</h2>
+      <p class="section-sub">Placeholder section — ready to be updated with actual certificates.</p>
+    </div>
+
+    <div class="cert-grid">
+      <div class="cert-card reveal">
+        <div class="cert-icon">📜</div>
+        <h3>Certificate</h3>
+        <p>Course / Platform — will be added here.</p>
+        <button class="btn-text" data-placeholder>View Certificate →</button>
+      </div>
+      <div class="cert-card reveal">
+        <div class="cert-icon">📜</div>
+        <h3>Certificate</h3>
+        <p>Course / Platform — will be added here.</p>
+        <button class="btn-text" data-placeholder>View Certificate →</button>
+      </div>
+      <div class="cert-card reveal">
+        <div class="cert-icon">🏅</div>
+        <h3>Achievement</h3>
+        <p>Description — will be added here.</p>
+        <button class="btn-text" data-placeholder>View Details →</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ LEARNING & PRACTICE ═══════════ -->
+<section class="section" id="experience">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Learning &amp; Practice</span>
+      <h2 class="section-title">Self-Learning / Academic <span class="text-grad">Practice</span>.</h2>
+      <p class="section-sub">As a fresher, this section shows my learning activity — not professional experience.</p>
+    </div>
+
+    <div class="exp-grid">
+      <div class="exp-card reveal">
+        <div class="exp-icon">🌐</div>
+        <h3>Web Development Practice</h3>
+        <p>Building responsive layouts with HTML, CSS, JavaScript. Practicing semantic markup, Flexbox, Grid, and interactive UI.</p>
+        <span class="exp-tag">Self-Learning</span>
+      </div>
+      <div class="exp-card reveal">
+        <div class="exp-icon">🐍</div>
+        <h3>Python Programming</h3>
+        <p>Working through core Python concepts — data types, functions, OOP, file handling, and small automation scripts.</p>
+        <span class="exp-tag">Self-Learning</span>
+      </div>
+      <div class="exp-card reveal">
+        <div class="exp-icon">🗄️</div>
+        <h3>Database Learning</h3>
+        <p>Learning MySQL fundamentals — queries, joins, schema design, and integrating databases with Python applications.</p>
+        <span class="exp-tag">Academic Practice</span>
+      </div>
+      <div class="exp-card reveal">
+        <div class="exp-icon">🧠</div>
+        <h3>AI / ML Fundamentals</h3>
+        <p>Exploring core AI and Machine Learning concepts through online resources and small experiments.</p>
+        <span class="exp-tag">Self-Learning</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ WHY ME ═══════════ -->
+<section class="section" id="achievements">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Why Me</span>
+      <h2 class="section-title">What I bring to the <span class="text-grad">table</span>.</h2>
+    </div>
+
+    <div class="why-grid">
+      <div class="why-card reveal"><div class="why-icon">⚡</div><h3>Fast Learner</h3><p>Always exploring new technologies and picking up concepts quickly.</p></div>
+      <div class="why-card reveal"><div class="why-icon">🧩</div><h3>Problem Solver</h3><p>Interested in understanding how things work under the hood.</p></div>
+      <div class="why-card reveal"><div class="why-icon">📈</div><h3>Consistent Learner</h3><p>Regularly improving programming fundamentals through daily practice.</p></div>
+      <div class="why-card reveal"><div class="why-icon">🔄</div><h3>Adaptable</h3><p>Open to learning new tools, languages, and technologies.</p></div>
+      <div class="why-card reveal"><div class="why-icon">🤝</div><h3>Team Friendly</h3><p>Interested in collaborating with developers and learning from teams.</p></div>
+      <div class="why-card reveal"><div class="why-icon">🚀</div><h3>Growth Mindset</h3><p>Focused on building a strong, long-term career in IT.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ GITHUB + LINKEDIN ═══════════ -->
+<section class="section" id="github">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Connect</span>
+      <h2 class="section-title">GitHub &amp; <span class="text-grad">LinkedIn</span>.</h2>
+      <p class="section-sub">Follow my learning journey and connect with me professionally.</p>
+    </div>
+
+    <div class="connect-grid">
+      <a href="https://github.com/Priyanshu-Mondal" target="_blank" rel="noopener" class="connect-card reveal">
+        <div class="connect-icon">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="36" height="36"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.302 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.09-.745.082-.73.082-.73 1.205.084 1.84 1.236 1.84 1.236 1.07 1.834 2.807 1.304 3.492.997.108-.775.418-1.305.762-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.468-2.38 1.235-3.22-.124-.3-.535-1.523.117-3.176 0 0 1.008-.322 3.3 1.23.96-.267 1.98-.4 3-.405 1.02.005 2.04.138 3 .405 2.29-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.876.118 3.176.77.84 1.235 1.91 1.235 3.22 0 4.61-2.805 5.625-5.475 5.92.43.37.81 1.102.81 2.222 0 1.606-.015 2.902-.015 3.296 0 .32.216.694.825.576C20.565 21.795 24 17.298 24 12c0-6.63-5.37-12-12-12z"/></svg>
+        </div>
+        <h3>GitHub</h3>
+        <p class="connect-username">@Priyanshu-Mondal</p>
+        <span class="connect-cta">View GitHub Profile →</span>
+      </a>
+
+      <a href="https://www.linkedin.com/in/priyanshu-mondal-51316b441" target="_blank" rel="noopener" class="connect-card reveal">
+        <div class="connect-icon linkedin-icon">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="36" height="36"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </div>
+        <h3>LinkedIn</h3>
+        <p class="connect-username">Priyanshu Mondal</p>
+        <span class="connect-cta">View LinkedIn Profile →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ RESUME ═══════════ -->
+<section class="section" id="resume">
+  <div class="container resume-wrap">
+    <div class="resume-card reveal">
+      <div class="resume-preview">
+        <div class="resume-doc">
+          <div class="doc-line w-80"></div>
+          <div class="doc-line w-60"></div>
+          <div class="doc-line w-90"></div>
+          <div class="doc-line w-70"></div>
+          <div class="doc-line w-50"></div>
+          <div class="doc-line w-80"></div>
+        </div>
+      </div>
+      <div class="resume-info">
+        <span class="eyebrow">Resume</span>
+        <h2 class="section-title">Get my <span class="text-grad">resume</span>.</h2>
+        <p>Download or view my latest resume.</p>
+        <div class="resume-actions">
+          <a href="assets/resume.pdf" target="_blank" class="btn btn-ghost magnetic">View Resume</a>
+          <a href="assets/resume.pdf" download class="btn btn-primary magnetic">Download Resume</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ CONTACT ═══════════ -->
+<section class="section" id="contact">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Contact</span>
+      <h2 class="section-title">Let's Build Something <span class="text-grad">Together</span>.</h2>
+      <p class="section-sub">I'm currently looking for opportunities to begin my career in the IT industry.</p>
+    </div>
+
+    <div class="contact-grid">
+      <div class="contact-cards">
+        <a href="mailto:parimalmondal74309@gmail.com" class="contact-card reveal">
+          <div class="cc-icon">📧</div><div><div class="cc-label">Email</div><div class="cc-value">parimalmondal74309@gmail.com</div></div>
+        </a>
+        <a href="tel:+919339191212" class="contact-card reveal">
+          <div class="cc-icon">📱</div><div><div class="cc-label">Phone</div><div class="cc-value">+91 93391 91212</div></div>
+        </a>
+        <a href="https://wa.me/919339191212?text=Hello%20Priyanshu%2C%20I%20visited%20your%20portfolio%20and%20would%20like%20to%20connect%20with%20you." target="_blank" rel="noopener" class="contact-card reveal">
+          <div class="cc-icon">💬</div><div><div class="cc-label">WhatsApp</div><div class="cc-value">Chat with me</div></div>
+        </a>
+        <a href="https://github.com/Priyanshu-Mondal" target="_blank" rel="noopener" class="contact-card reveal">
+          <div class="cc-icon">💻</div><div><div class="cc-label">GitHub</div><div class="cc-value">@Priyanshu-Mondal</div></div>
+        </a>
+        <a href="https://www.linkedin.com/in/priyanshu-mondal-51316b441" target="_blank" rel="noopener" class="contact-card reveal">
+          <div class="cc-icon">🔗</div><div><div class="cc-label">LinkedIn</div><div class="cc-value">Priyanshu Mondal</div></div>
+        </a>
+        <div class="contact-card reveal">
+          <div class="cc-icon">📍</div><div><div class="cc-label">Location</div><div class="cc-value">Pashpur, Jangipara, Hooghly, WB</div></div>
+        </div>
+      </div>
+
+      <form class="contact-form reveal" id="contactForm" novalidate>
+        <div class="form-row">
+          <label for="cf-name">Name</label>
+          <input id="cf-name" name="name" type="text" required placeholder="Your name">
+          <small class="err" data-err="name"></small>
+        </div>
+        <div class="form-row">
+          <label for="cf-email">Email</label>
+          <input id="cf-email" name="email" type="email" required placeholder="you@email.com">
+          <small class="err" data-err="email"></small>
+        </div>
+        <div class="form-row">
+          <label for="cf-subject">Subject</label>
+          <input id="cf-subject" name="subject" type="text" required placeholder="What's this about?">
+          <small class="err" data-err="subject"></small>
+        </div>
+        <div class="form-row">
+          <label for="cf-message">Message</label>
+          <textarea id="cf-message" name="message" rows="5" required placeholder="Your message..."></textarea>
+          <small class="err" data-err="message"></small>
+        </div>
+        <button type="submit" class="btn btn-primary magnetic btn-full">
+          Send Message
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+        </button>
+        <p class="form-note">⚠️ Form is demo-only. Connect Formspree / Web3Forms to receive real messages.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ═══ FOOTER ═══ -->
+<footer class="footer">
+  <div class="container footer-inner">
+    <div class="footer-col">
+      <span class="logo-mark">PM</span>
+      <span>© 2025 Priyanshu Mondal · Built with ❤️ in West Bengal</span>
+    </div>
+    <div class="footer-col footer-links">
+      <a href="#hero">Home</a>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<!-- ═══ BACK TO TOP ═══ -->
+<button class="back-to-top" id="backToTop" aria-label="Back to top">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
+
+<!-- ═══ FLOATING WHATSAPP ═══ -->
+<a href="https://wa.me/919339191212?text=Hello%20Priyanshu%2C%20I%20visited%20your%20portfolio%20and%20would%20like%20to%20connect%20with%20you."
+   class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor" width="26" height="26"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+</a>
+
+<!-- ═══ COMMAND PALETTE ═══ -->
+<div class="cmdk" id="cmdk" role="dialog" aria-modal="true" aria-label="Command palette">
+  <div class="cmdk-backdrop" data-close-cmdk></div>
+  <div class="cmdk-panel" role="document">
+    <div class="cmdk-input-wrap">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.35-4.35"/></svg>
+      <input type="text" id="cmdkInput" placeholder="Type a command or search..." autocomplete="off">
+      <kbd>ESC</kbd>
+    </div>
+    <ul class="cmdk-list" id="cmdkList">
+      <li data-cmd="home"><span>🏠</span>Go Home</li>
+      <li data-cmd="about"><span>👤</span>About</li>
+      <li data-cmd="skills"><span>🧠</span>Skills</li>
+      <li data-cmd="projects"><span>🚀</span>Projects</li>
+      <li data-cmd="education"><span>🎓</span>Education</li>
+      <li data-cmd="resume"><span>📄</span>Resume</li>
+      <li data-cmd="contact"><span>📩</span>Contact</li>
+      <li data-cmd="theme"><span>🌓</span>Toggle Theme</li>
+    </ul>
+    <div class="cmdk-footer"><kbd>↑</kbd><kbd>↓</kbd> navigate · <kbd>↵</kbd> select · <kbd>ESC</kbd> close</div>
+  </div>
+</div>
+
+<!-- ═══ ACCENT PICKER ═══ -->
+<div class="accent-picker" id="accentPicker">
+  <button class="accent-dot" data-accent="cyan" data-color="#00e5ff" aria-label="Cyan"></button>
+  <button class="accent-dot" data-accent="emerald" data-color="#10b981" aria-label="Emerald"></button>
+  <button class="accent-dot" data-accent="purple" data-color="#a855f7" aria-label="Purple"></button>
+  <button class="accent-dot" data-accent="blue" data-color="#3b82f6" aria-label="Blue"></button>
+  <button class="accent-dot" data-accent="sunset" data-color="#f97316" aria-label="Sunset"></button>
+</div>
+
+<!-- ═══ PROJECT MODAL ═══ -->
+<div class="modal" id="projectModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+  <div class="modal-backdrop" data-close-modal></div>
+  <div class="modal-panel">
+    <button class="modal-close" data-close-modal aria-label="Close">&times;</button>
+    <div class="modal-thumb" id="modalThumb"></div>
+    <div class="modal-body">
+      <span class="eyebrow" id="modalCategory">Project</span>
+      <h3 id="modalTitle">Project Title</h3>
+      <p id="modalDesc">Description</p>
+
+      <div class="modal-section">
+        <h4>Features</h4>
+        <ul id="modalFeatures"></ul>
+      </div>
+
+      <div class="modal-section">
+        <h4>Technologies</h4>
+        <div class="proj-tags" id="modalTags"></div>
+      </div>
+
+      <div class="modal-section">
+        <h4>Challenges</h4>
+        <p id="modalChallenges"></p>
+      </div>
+
+      <div class="modal-actions">
+        <a href="#" class="btn btn-ghost" id="modalGithub">GitHub</a>
+        <a href="#" class="btn btn-primary" id="modalDemo">Live Demo</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ TOAST ═══ -->
+<div class="toast" id="toast" role="status" aria-live="polite">
+  <span id="toastMsg">Message</span>
+</div>
+
+<!-- External JS -->
+<script src="p.js"></script>
+</body>
+</html>
